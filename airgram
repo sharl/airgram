@@ -51,6 +51,7 @@ if (! $message) {
     $message =~ s/[\r\n]+/ /g;
     $message =~ s/\s+$//;
 }
+exit unless $message;
 
 my %formdata = ( email => $email, msg => $message, url => $url);
 my $req = POST('https://api.airgramapp.com/1/' . $method, [%formdata]);
